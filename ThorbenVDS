@@ -1,6 +1,11 @@
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
+<meta name="keywords" content="HTML,CSS,Calculator,JavaScript,Thorben,ThorbenVDS,VDS,calculator,rekenmachine,rekenen,Github.io,Github,.io,vierkantswortel,plus,min;vermenigvuldiging,vermenigvuldeging,optelling,aftrekking,Deling,ThorbenRekenmachine123,Power,">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
 button {
 width: 30px;
@@ -16,7 +21,7 @@ color: white;
 }
  
 body {
-margin-top: 30%;
+margin-top: 20vh;
 }
  
 input {
@@ -74,7 +79,8 @@ font-family:verdana;
 <button onclick="acht();">8</button>
 <button onclick="negen();">9</button>
  
-<button onclick="plus();">+</button>
+<button onclick="GB();">GB</button>
+ 
  
 <br>
  
@@ -82,7 +88,7 @@ font-family:verdana;
 <button onclick="vijf();">5</button>
 <button onclick="zes();">6</button>
  
-<button onclick="min();">-</button>
+<button onclick="uitkomst();EasterEgg();">=</button>
  
 <br>
  
@@ -90,22 +96,26 @@ font-family:verdana;
 <button onclick="twee();">2</button>
 <button onclick="drie();">3</button>
  
-<button onclick="maal();">*</button>
+<button onclick="DEL();">&larr;</button>
  
 <br>
  
 <button onclick="nul();" >0</button>
 
-<button onclick="mysave();">S</button>
-<button onclick="GB();">GB</button>
- 
+<button onclick="komma();">.</button>
+<button onclick="plus();">+</button>
+
 <button onclick="deel();">/</button>
  
  
 <br>
-<button id="nul"; onclick="klaar();" >CLEAR</button>
-<button onclick="DEL();">&larr;</button>
-<button onclick="uitkomst();">=</button>
+<button onclick="mysave();">S</button>
+<button onclick="maal();">*</button>
+<button onclick="min();">-</button>
+<button onclick="macht();">^</button>
+<br>
+<button onclick="klaar();"id="nul" >CLEAR</button>
+<button onclick="uitkomst();EasterEgg();"id="nul";>=</button>
 <p id="thierben">T & T</p>
 </div>
 </div>
@@ -167,6 +177,9 @@ function zes(){document.getElementById("input").value=document.getElementById("i
 function zeven(){document.getElementById("input").value=document.getElementById("input").value+"7"}
 function acht(){document.getElementById("input").value=document.getElementById("input").value+"8"}
 function negen(){document.getElementById("input").value=document.getElementById("input").value+"9"}
+function komma()
+{document.getElementById("input").value=document.getElementById("input").value+"."
+}
  
 function plus(){
 var getal1 = document.getElementById("input").value;
@@ -195,7 +208,14 @@ document.getElementById("saveVar").value = getal1;
 document.getElementById("saveBerekening").value = "/";
 document.getElementById("input").value = "";
 }
- 
+
+function macht(){
+var getal1 = document.getElementById("input").value;
+document.getElementById("saveVar").value = getal1;
+document.getElementById("saveBerekening").value = "^";
+document.getElementById("input").value = "";
+}
+
 function uitkomst(){
 var getal1 = (document.getElementById("saveVar").value);
 var getal2 = (document.getElementById("input").value);
@@ -204,10 +224,11 @@ if (berekening == "+"){var uitkomst = +getal1 + +getal2;}
 else if (berekening == "-"){var uitkomst = +getal1 - +getal2;}
 else if (berekening == "*"){var uitkomst = +getal1 * +getal2;}
 else if (berekening == "/"){var uitkomst = +getal1 / +getal2;}
+else if (berekening == "^"){var uitkomst = Math.pow(+getal1, +getal2);}
 else {var uitkomst = "error";}
 document.getElementById("input").value = uitkomst;
 }
- 
+
 function klaar(){
 document.getElementById("input").value = "";
 document.getElementById("saveVar").value = "";
@@ -235,4 +256,5 @@ document.getElementById("input").value = sillyString;
 </script>
 </body>
 </html>
+
 
